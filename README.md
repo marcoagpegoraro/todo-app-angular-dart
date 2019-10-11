@@ -1,9 +1,8 @@
 ## ToDo app feito em Angular Dart
 
 
-
 1. Get the dependencies: `pub get`
-2. Get the webdev tool: `pub global activate webdev`
+2. Get the webdev tool: `pub global activate webdev 2.0.5`
 3. Launch a development server: `webdev serve`
 ---
 
