@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
@@ -13,5 +15,15 @@ import 'package:angular_router/angular_router.dart';
   ],
 )
 class AppComponent {
+  @ViewChild('navBurger')
+  Element navBurger;
+  @ViewChild('navMenu')
+  Element navMenu;
+
+  toggleNavbar() {
+    this.navBurger.classes.toggle('is-active');
+    this.navMenu.classes.toggle('is-active');
+  }
+
   var name = 'Marco';
 }
