@@ -1,27 +1,96 @@
-<header class="material-header">
-    <div class="material-header-row">
-        <material-button icon class="material-drawer-button" (trigger)="toggle()">
-            <material-icon icon="menu"></material-icon>
-        </material-button>
-        <span class="material-header-title">Simple Layout</span>
-        <div class="material-spacer"></div>
-        <nav class="material-navigation">
-            <a>Link 1</a>
-        </nav>
-        <nav class="material-navigation">
-            <a>Link 2</a>
-        </nav>
-        <nav class="material-navigation">
-            <a>Link 3</a>
-        </nav>
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img
+        src="https://angulardart.dev/assets/shared/angular/icon/default-77f530ea0ef7066f55bd9466f5b7c50201e2f33b6dff9897c46bfa28f78d4bd4.svg"
+        width="28" height="28">
+    </a>
+    <div class="navbar-item">
+      ToDo App - Angular Dart
     </div>
-</header>
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
 
-<material-drawer permanent>
-    <h1>Hello {{name}}</h1>
-    Drawer content here 
-</material-drawer>
-<material-content>
-    <h1>Hello❤❤❤❤😢 😘😘</h1>
-    Content goes here 
-  </material-content>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</nav>
+
+
+<div class="columns is-centered">
+  <div class="column is-half">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">John Smith</p>
+            <p class="subtitle is-6">@johnsmith</p>
+          </div>
+        </div>
+
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+          <a href="#">#css</a> <a href="#">#responsive</a>
+          <br>
+          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+// Get all "navbar-burger" elements
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+// Check if there are any navbar burgers
+if ($navbarBurgers.length > 0) {
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+}
+
+});
+</script>
