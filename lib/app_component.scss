@@ -2,3 +2,15 @@
 @import "package:bulma_sass/scss/utilities/functions";
 
 @import "package:bulma_sass/scss/bulma";
+
+.is-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+@import url(/packages/font_awesome/css/all.css); /* font_awesome css file is imported here */
+
+.center-content{
+  align-items: center;
+  justify-content: center;
+}
