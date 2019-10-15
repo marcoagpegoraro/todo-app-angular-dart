@@ -1,1 +1,27 @@
-<h1>Hello {{name}}</h1>
+<header class="material-header">
+    <div class="material-header-row">
+        <material-button icon class="material-drawer-button" (trigger)="toggle()">
+            <material-icon icon="menu"></material-icon>
+        </material-button>
+        <span class="material-header-title">Simple Layout</span>
+        <div class="material-spacer"></div>
+        <nav class="material-navigation">
+            <a>Link 1</a>
+        </nav>
+        <nav class="material-navigation">
+            <a>Link 2</a>
+        </nav>
+        <nav class="material-navigation">
+            <a>Link 3</a>
+        </nav>
+    </div>
+</header>
+
+<material-drawer permanent>
+    <h1>Hello {{name}}</h1>
+    Drawer content here 
+</material-drawer>
+<material-content>
+    <h1>Hello❤❤❤❤😢 😘😘</h1>
+    Content goes here 
+  </material-content>
