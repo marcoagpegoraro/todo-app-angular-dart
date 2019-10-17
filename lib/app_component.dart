@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:angular/angular.dart';
 import 'package:angular_app/pages/login/login.dart';
+import 'package:angular_app/pages/signup/signup.dart';
 import 'package:angular_app/route_paths.dart';
 import 'package:angular_app/routes.dart';
 import 'package:angular_router/angular_router.dart';
@@ -15,7 +16,8 @@ import 'package:angular_router/angular_router.dart';
   directives: [
     coreDirectives,
     routerDirectives,
-    Login    
+    Login,
+    Signup    
   ],
   exports: [RoutePaths, Routes],
 )

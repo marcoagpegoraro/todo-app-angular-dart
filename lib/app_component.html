@@ -19,10 +19,12 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
+          <a [routerLink]="RoutePaths.signup.toUrl()"
+          [routerLinkActive]="'active'" class="button is-primary">
+            Sign up
           </a>
-          <a class="button is-light">
+          <a [routerLink]="RoutePaths.login.toUrl()"
+          [routerLinkActive]="'active'" class="button is-light">
             Log in
           </a>
         </div>

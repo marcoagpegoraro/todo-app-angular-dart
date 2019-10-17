@@ -13,7 +13,7 @@ dependencies:
   font_awesome: ^5.10.1
   http: ^0.12.0+2
   angular_forms: ^2.0.0
-    
+
 dev_dependencies:
   angular_test: ^2.2.0
   build_runner: ^1.1.2

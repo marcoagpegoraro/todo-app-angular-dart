@@ -1,0 +1,59 @@
+<div class="columns is-centered" style="margin-top: 5%;">
+  <div class="column is-half">
+    <div class="card">
+      <div class="card-content">
+        <div class="content">
+          <div class="control">
+            <form>
+              <div class="field">
+                <div class="control has-icons-left">
+                  <input class="input is-medium" type="text" placeholder="Nome" [(ngModel)]="name">
+                  <span class="icon is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control has-icons-left">
+                  <input class="input is-medium" type="email" placeholder="Email" [(ngModel)]="email">
+                  <span class="icon is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control has-icons-left">
+                  <input class="input is-medium" type="password" placeholder="Senha" [(ngModel)]="password">
+                  <span class="icon is-left">
+                    <i class="fas fa-key"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <button type="submit" class="button is-primary is-fullwidth" (click)="handleSignup()">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div #modal class="modal">
+  <div (click)="toggleModal()" class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Sucesso</p>
+      <button (click)="toggleModal()" class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      Usuário "{{name}}" com o email "{{email}}" criado com sucesso!
+    </section>
+    <footer class="modal-card-foot">
+      <button (click)="toggleModal()" class="button is-success">OK</button>
+    </footer>
+  </div>
+</div>
