@@ -2,6 +2,8 @@ import 'dart:html';
 
 import 'package:angular/angular.dart';
 import 'package:angular_app/pages/login/login.dart';
+import 'package:angular_app/route_paths.dart';
+import 'package:angular_app/routes.dart';
 import 'package:angular_router/angular_router.dart';
 
 @Component(
@@ -15,6 +17,7 @@ import 'package:angular_router/angular_router.dart';
     routerDirectives,
     Login    
   ],
+  exports: [RoutePaths, Routes],
 )
 class AppComponent {
   @ViewChild('navBurger')
