@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:angular/angular.dart';
+import 'package:angular_app/pages/login/login.dart';
 import 'package:angular_router/angular_router.dart';
 
 @Component(
@@ -12,6 +13,7 @@ import 'package:angular_router/angular_router.dart';
   directives: [
     coreDirectives,
     routerDirectives,
+    Login    
   ],
 )
 class AppComponent {
@@ -19,11 +21,12 @@ class AppComponent {
   Element navBurger;
   @ViewChild('navMenu')
   Element navMenu;
-
+  
   toggleNavbar() {
     this.navBurger.classes.toggle('is-active');
     this.navMenu.classes.toggle('is-active');
   }
+
 
   var name = 'Marco';
 }

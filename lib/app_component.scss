@@ -10,7 +10,9 @@
 
 @import url(/packages/font_awesome/css/all.css); /* font_awesome css file is imported here */
 
-.center-content{
-  align-items: center;
+.content{
+  display: flex;
   justify-content: center;
+  align-items: center;        /* for single line flex container */
+  align-content: center;    
 }
