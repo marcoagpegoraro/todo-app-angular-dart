@@ -1,36 +1,3 @@
-<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img
-        src="https://angulardart.dev/assets/shared/angular/icon/default-77f530ea0ef7066f55bd9466f5b7c50201e2f33b6dff9897c46bfa28f78d4bd4.svg"
-        width="28" height="28">
-    </a>
-    <div class="navbar-item">
-      ToDo App - Angular Dart
-    </div>
-    <a role="button" (click)="toggleNavbar()" #navBurger class="navbar-burger" data-target="navMenu" aria-label="menu"
-      aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbarBasicExample" #navMenu class="navbar-menu">
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a [routerLink]="RoutePaths.signup.toUrl()"
-          [routerLinkActive]="'active'" class="button is-primary">
-            Sign up
-          </a>
-          <a [routerLink]="RoutePaths.login.toUrl()"
-          [routerLinkActive]="'active'" class="button is-light">
-            Log in
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+<navbar></navbar>
 
 <router-outlet [routes]="Routes.all"></router-outlet>

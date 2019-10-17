@@ -1,0 +1,31 @@
+<div class="columns is-centered" style="margin-top: 5%;">
+  <div class="column is-three-quarters">
+    <div class="card">
+      <div class="card-content">
+        <div class="content">
+          <table class="table is-striped is-fullwidth is-hoverable">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Feito?</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let todo of todos">
+                <th>{{todo['id']}}</th>
+                <th>{{todo['name']}}</th>
+                <th>{{todo['done'] ? 'Aham' : 'Ainda não :/'}}</th>
+                <th>
+                  <a class="button is-success is-rounded">Editar</a>
+                  <a class="button is-danger is-rounded">Excluir</a>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

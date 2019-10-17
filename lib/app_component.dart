@@ -1,10 +1,8 @@
-import 'dart:html';
-
 import 'package:angular/angular.dart';
-import 'package:angular_app/pages/login/login.dart';
-import 'package:angular_app/pages/signup/signup.dart';
+import 'package:angular_app/pages/navbar/navbar.dart';
 import 'package:angular_app/route_paths.dart';
 import 'package:angular_app/routes.dart';
+import 'package:angular_app/utils/utils.dart';
 import 'package:angular_router/angular_router.dart';
 
 @Component(
@@ -13,25 +11,10 @@ import 'package:angular_router/angular_router.dart';
   styleUrls: [
     'app_component.css',
   ],
-  directives: [
-    coreDirectives,
-    routerDirectives,
-    Login,
-    Signup    
-  ],
+  directives: [coreDirectives, routerDirectives, Navbar],
   exports: [RoutePaths, Routes],
+  providers: [ClassProvider(Utils),ClassProvider(Navbar)]
 )
-class AppComponent {
-  @ViewChild('navBurger')
-  Element navBurger;
-  @ViewChild('navMenu')
-  Element navMenu;
-  
-  toggleNavbar() {
-    this.navBurger.classes.toggle('is-active');
-    this.navMenu.classes.toggle('is-active');
-  }
+class AppComponent{
 
-
-  var name = 'Marco';
 }
