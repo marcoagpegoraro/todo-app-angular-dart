@@ -12,7 +12,6 @@ import 'package:angular_forms/angular_forms.dart';
   templateUrl: 'signup.html',
   styleUrls: [
     '../../app_component.css',
-    'signup.css',
   ],
   directives: [coreDirectives, routerDirectives, formDirectives],
 )

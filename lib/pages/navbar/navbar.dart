@@ -12,7 +12,6 @@ import 'package:angular_forms/angular_forms.dart';
   templateUrl: 'navbar.html',
   styleUrls: [
     '../../app_component.css',
-    'navbar.css',
   ],
   directives: [coreDirectives, routerDirectives, formDirectives],
   exports: [RoutePaths, Routes]
@@ -45,7 +44,7 @@ class Navbar extends OnInit{
   }
 
   handleLogoff(){
-    window.localStorage.remove(['token']);
+    window.localStorage.remove('token');
     utils.isLoggedIn = false;
     _router.navigate(RoutePaths.login.toUrl());
   }

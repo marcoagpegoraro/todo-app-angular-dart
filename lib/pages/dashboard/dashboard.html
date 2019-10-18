@@ -1,6 +1,29 @@
-<div class="columns is-centered" style="margin-top: 5%;">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@2.2.2/bulma-switch/dist/css/bulma-switch.min.css"> -->
+<div class="columns is-centered" style="margin-top: 1%; width: 100%;">
   <div class="column is-three-quarters">
     <div class="card">
+      <div class="card-header">
+        <div class="card-header-title">
+          Ações
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <a class="button is-success is-rounded" (click)="openModal()">Editar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="columns is-centered is-fullwidth" style="margin-top: 1%; width: 100%">
+  <div class="column is-three-quarters">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-title">
+          Lista de tarefas
+        </div>
+      </div>
       <div class="card-content">
         <div class="content">
           <table class="table is-striped is-fullwidth is-hoverable">
@@ -18,8 +41,8 @@
                 <th>{{todo['name']}}</th>
                 <th>{{todo['done'] ? 'Aham' : 'Ainda não :/'}}</th>
                 <th>
-                  <a class="button is-success is-rounded">Editar</a>
-                  <a class="button is-danger is-rounded">Excluir</a>
+                  <a class="button is-success is-rounded" (click)="openModal(todo)">Editar</a>
+                  <a class="button is-danger is-rounded" (click)="handleDelete(todo)">Excluir</a>
                 </th>
               </tr>
             </tbody>
@@ -27,5 +50,38 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div #modal class="modal">
+  <div (click)="closeModal()" class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Save</p>
+      <button (click)="closeModal()" class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <form>
+        <div class="field">
+          <div class="control has-icons-left">
+            <input class="input is-medium" type="text" placeholder="Nome" [(ngModel)]="name">
+            <span class="icon is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <input type="checkbox" class="switch"
+            [(ngModel)]="done">
+          <label for="switchExample">Switch example</label>
+        </div>
+
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+      <button #modalButton class="button is-success">Save</button>
+      <button (click)="closeModal()" class="button">Cancel</button>
+    </footer>
   </div>
 </div>

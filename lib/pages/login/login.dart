@@ -13,7 +13,6 @@ import 'package:angular_forms/angular_forms.dart';
   templateUrl: 'login.html',
   styleUrls: [
     '../../app_component.css',
-    'login.css',
   ],
   directives: [coreDirectives, routerDirectives, formDirectives],
 )
