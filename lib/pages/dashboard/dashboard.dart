@@ -19,9 +19,6 @@ class Dashboard extends OnInit {
   @ViewChild('modal')
   Element modal;
 
-  @ViewChild('modalButton')
-  Element modalButton;
-
   int id;
   String name;
   bool done;
@@ -37,33 +34,30 @@ class Dashboard extends OnInit {
     this.modal.classes.toggle('is-active');
   
     if(todo == null){
-      modalButton.addEventListener('click', (event){
-        event.preventDefault();
-        handleInsert();
-      });
+        this.done = false;
     }
     else{
       this.id = todo['id'];
       this.name = todo['name'];
       this.done = todo['done'];
-      modalButton.addEventListener('click', (event){
-        event.preventDefault();
-        handleUpdate();
-      });
     }
 
   }
 
   closeModal() {
-    this.modal.classes.toggle('is-active');
     resetModalFields();
-    modalButton.removeEventListener('click', (event){});
+    getTodos();
+    this.modal.classes.toggle('is-active');
   }
 
   resetModalFields() {
     id = null;
     name = null;
     done = null;
+  }
+
+  toggleSwitch(){
+    this.done = !done;
   }
 
   getTodos() async {
@@ -78,10 +72,10 @@ class Dashboard extends OnInit {
 
   handleInsert() async {
     await http.post("${Utils.baseUrl}/todo",
-    body: {
-      name: name,
-      done: done
-    },
+    body: jsonEncode({
+      'name': name,
+      'done': done
+    }),
     headers: {
       'Content-type': 'application/json',
       'Accept': 'application/json',
@@ -93,10 +87,10 @@ class Dashboard extends OnInit {
 
   handleUpdate() async {
     await http.put("${Utils.baseUrl}/todo/${id}",
-    body: {
-      name: name,
-      done: done
-    },
+    body: jsonEncode({
+      'name': name,
+      'done': done
+    }),
     headers: {
       'Content-type': 'application/json',
       'Accept': 'application/json',

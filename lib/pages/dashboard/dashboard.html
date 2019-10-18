@@ -9,7 +9,8 @@
       </div>
       <div class="card-content">
         <div class="content">
-          <a class="button is-success is-rounded" (click)="openModal()">Editar</a>
+          <a class="button is-success is-rounded" (click)="openModal()">Adicionar</a>
+          <a class="button is-primary is-rounded" (click)="getTodos()">Atualizar</a>
         </div>
       </div>
     </div>
@@ -57,7 +58,8 @@
   <div (click)="closeModal()" class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Save</p>
+      <p *ngIf="id == null" class="modal-card-title">Incluir</p>
+      <p *ngIf="id != null" class="modal-card-title">Atualizar</p>
       <button (click)="closeModal()" class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
@@ -71,16 +73,17 @@
           </div>
         </div>
 
+
         <div class="field">
-          <input type="checkbox" class="switch"
-            [(ngModel)]="done">
-          <label for="switchExample">Switch example</label>
+          <input id="done" type="checkbox" name="done" class="switch" [(ngModel)]="done">
+          <label for="done">Feito</label>
         </div>
 
       </form>
     </section>
     <footer class="modal-card-foot">
-      <button #modalButton class="button is-success">Save</button>
+      <button *ngIf="id == null" class="button is-success" (click)="handleInsert()">Incluir</button>
+      <button *ngIf="id != null" class="button is-success" (click)="handleUpdate()">Atualizar</button>
       <button (click)="closeModal()" class="button">Cancel</button>
     </footer>
   </div>
