@@ -2,7 +2,7 @@
 
 
 1. Get the dependencies: `pub get`
-2. Get the webdev tool: `pub global activate webdev 2.0.5`
+2. Get the webdev tool: `pub global activate webdev 2.5.3`
 3. Launch a development server: `webdev serve`
 ---
 
